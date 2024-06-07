@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" th:src="@{/js/jquery-3.7.1.min.js}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            alert("this is save page");
+
+            $("form").submit(function(){
+                alert("submitted");
+            })
+
+        });
+    </script>
+</head>
+<body>
+<form method="POST" target="_self">
+    <h2>
+        이메일 : <input type="text" id="email" name="email" />
+        비밀번호 : <input type="text" id="password" name="password" />
+        이미지 : <input type="text" id="image" name="image" />
+        <input type="submit" id="submit" name="submit" value="회원가입"/>
+    </h2>
+</form>
+</body>
+</html>

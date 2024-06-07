@@ -1,0 +1,27 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  profiles:
+    active: local
+  thymeleaf:
+    prefix: classpath:templates/thymeleaf
+    check-template-location: true
+    suffix: .html
+    mode: HTML
+    cache: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  config: classpath:logback/logback-${spring.profiles.active}.xml
